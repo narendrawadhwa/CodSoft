@@ -1,7 +1,20 @@
 
-const user = require('../models/userModel');
+const User = require('../models/userModel');
 const ErrorResponse = require('../utils/errorResponse')
 
-exports.signup = (req, res, next) => {
-    res.send("Hello from Node Js");
+exports.signup = async (req, res, next) => {
+    const { email } = req.body;
+    const userExist = await User.findOne({ email });
+    if (userExist) {
+        return next(new ErrorResponse("E-mail already registred", 400));
+    }
+    try {
+        const user = await User.create(req.body);
+        res.status(201).json({
+            success: true,
+            user
+        })
+    } catch (error) {
+        next(error);
+    }
 }

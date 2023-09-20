@@ -7,11 +7,12 @@ p {
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-image: url('peacock-feather.jpg');
+    font-family: monospace;
+    background-image: url('assets/peacock-feather.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    color:#003a6e;
 }
 
 main {
@@ -30,6 +31,10 @@ section {
 
 ol {
     padding-left: 20px;
+}
+
+ol li{
+margin:30px 0px;
 }
 
 nav {
@@ -81,7 +86,7 @@ nav ul {
 nav ul li a {
     text-decoration: none;
     color: #fff;
-    margin: 0px 15px;
+    margin: 0px 25px;
     padding: 5px 0px;
     position: relative;
     transition: color 0.5s;
@@ -185,7 +190,11 @@ hr{
     display: flex;
     align-items: center;
 }
-
+.crafted-by{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
 .user-info h3{
     font-weight: 600;
     color: #003a6e;
@@ -231,7 +240,7 @@ hr{
 }
 
 .social-icon:hover{
-    scale: 1.2;
+    scale: 1.25;
 }
 .heading{
     font-family: 'Style Script', cursive;
@@ -239,107 +248,152 @@ hr{
     margin: 10px;
     color: #003a6e;
 }
-.image-on-right {
+
+.intro {
     display: flex;
-    flex-direction: row-reverse; /* This places the image on the right side */
-    align-items: center; /* Vertically aligns the content */
+    flex-direction: row;
+    align-items: flex-start; /* Align items to the top to avoid overlap */
     color: #003a6e;
-    font-family:monospace;
-
+    font-family: monospace;
+    margin: 20px 25px;
 }
 
-.image-on-right .slide {
-    width:220px;
-    height:220px;
-    top:0px;
-    position: absolute;
+.description {
+    flex: 1; /* Allow the description to take up remaining space */
+    margin-right: 20px; /* Add spacing between text and slider */
+    text-align: left; /* Align the text to the left */
+}
+
+.slider {
+    width: 250px; /* Adjust the width as needed for your slider */
+    height: 250px; /* Automatically adjust the height based on the content */
+}
+
+.slider .slide {
+    width: 250px;
+    height: 250px;
+    border-radius: 5px;
     display: none;
+    object-fit: cover;
 }
 
-.slide.active{
+.slide.active {
     display: block;
 }
+
 .nav{
     text-align: center;
     margin-top: 15px;
     z-index: 10;
     position: absolute;
+    padding: 5px;
+    display: flex;
+    width: 250px;
+    height: 250px;
+    top:107px;
+    right:4.25%;
 }
 
 .nav button{
-    font-size: 25px;
-    padding: 5px;
+    width: 35px;
+    height: 35px;
+    outline: none;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 800;
+    border: 0;
+    background-color: rgba(255, 255, 255, 0); /* Transparent initially */
+    padding: 125px 5px;
+    cursor: pointer;
+    justify-content: center;
+    transition: color 0.3s ease-in, background-color 0.5s ease-in; /* Smooth transition */
 }
+
+.nav button:hover{
+    background-color: rgba(255, 255, 255, 0.4); /* Slightly transparent white */
+    color: #959595;
+}
+
+
 footer {
     padding: 10px;
     display: flex;
     justify-content: center;
 }
 
-.container-section {
+.life-events{
+ font-family: monospace;
+ color: #003a6e;
+}
+
+.section-heading{
+ display: flex;
+ margin:40px 20px;   
+ justify-content: center;
+ align-items: center;
+}
+
+.container-section{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    max-width: 800px; /* Adjust the max-width as needed */
-    margin: 20px auto;
+    max-width: 900px; 
+    margin: 0 auto; 
 }
-
-.container {
-    width: 200px;
-    height: 250px;
-    margin: 10px;
-    background-color: #fff;
-    text-align: center;
-    overflow: hidden;
+.container{
+    width: 260px;
+    height: 370px;
+    display: flex;
     position: relative;
-    transition: box-shadow 0.3s, transform 0.3s;
+    margin: 0px 20px 35px 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    flex-direction: column;
+    transition: box-shadow 0.3s; 
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+cursor: pointer;}
+
+.image{
+    overflow: hidden;
+    width: 260px;
+    min-height: 225px;
+}
+.image img{
+    width: 260px;
+    height:225px;
+    object-fit: fill;
+    transition: scale 0.3s ease-in-out;
 }
 
-.container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.container h2 {
-    position: absolute;
-    top: 50%; /* Position h2 in the middle of the container */
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    margin: 0;
-    padding: 5px;
-    opacity: 0;
-    transform: translateY(-50%); /* Move it up by 50% of its height */
-    transition: opacity 0.3s, transform 0.3s;
-}
-
-.container .event-description {
-    position: absolute;
-    top: 50%; /* Position description in the middle of the container */
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    margin: 0;
-    padding: 5px;
-    opacity: 0;
-    transform: translateY(50%); /* Move it down by 50% of its height */
-    transition: opacity 0.3s, transform 0.3s;
-}
+.container:hover .image img{
+    scale: 1.1;
+    }
 
 .container:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    transform: scale(1.02);
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
-.container:hover h2 {
-    opacity: 1;
-    transform: translateY(0); /* Move h2 back to its original position */
+.container-content{
+padding: 5px;
+margin: 5px;
 }
 
-.container:hover .event-description {
-    opacity: 1;
-    transform: translateY(0); /* Move description back to its original position */
+.read-more{
+    padding: 3px 15px 10px 150px;
+    display: flex;
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    background: #fff;
+}
+
+.read-more a{
+    text-decoration: none;
+    color:#003a6e;
+    font-weight: 700;
+}
+
+#lessons{
+    width: 850px;
+    margin: 25px;
 }

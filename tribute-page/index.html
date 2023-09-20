@@ -1,123 +1,689 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=PT+Mono&family=PT+Serif+Caption&family=Style+Script&family=Yesteryear&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=PT+Mono&family=PT+Serif+Caption&family=Style+Script&family=Yesteryear&display=swap"
+        rel="stylesheet">
     <title>Tribute to Lord Krishna</title>
 </head>
+
 <body>
-    <audio autoplay loop>
-        <source src="flute.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    
-    
     <nav>
         <div class="logo">
             <a href="#" id="logo-link">
-                Tribute to Shree Krishna<img src="feather.png" alt="Feather" class="logo-image"> 
+                Tribute to Shree Krishna<img src="assets/feather.png" alt="Feather" class="logo-image">
             </a>
         </div>
         <ul>
-            <li><a href="#life">Life of Lord Krishna</a></li>
-            <li><a href="#bhagavad-gita">Bhagavad Gita</a></li>
+            <li><a href="#life-events">Life of Lord Krishna</a></li>
             <li><a href="#lessons">Key Lessons</a></li>
             <li><a href="#legacy">Legacy</a></li>
         </ul>
         <div class="profile-container">
-            <img src="profile-img.png" class="profile-img" onclick="toggleMenu()">
+            <img src="assets/profile-img.png" class="profile-img" onclick="toggleMenu()">
             <span class="green-circle"></span>
         </div>
         <div class="sub-menu-wrap" id="subMenu">
             <div class="sub-menu">
                 <div class="user-info">
-                    <img src="profile-img.png">
+                    <img src="assets/profile-img.png">
                     <span class="green-circle-profile"></span>
-                    <h3>Narendra Wadhwa</h3>
+                    <span class="crafted-by">
+                        <h6 style="margin: 0;">CRAFTED BY</h6>
+                        <h3 style="margin: 0;">NARENDRA WADHWA</h3>
+                    </span>
                 </div>
                 <hr>
                 <h5 style="color: #003a6e ;text-align: center; margin:15px 0px 2px 0px">My Social Media</h5>
                 <div class="social-links">
                     <a href="https://github.com/narendrawadhwa" target="_blank">
-                        <img src="github-icon.png" alt="github" class="social-icon">
+                        <img src="assets/github-icon.png" alt="github" class="social-icon">
                     </a>
                     <a href="https://www.instagram.com/_narennn._/" target="_blank">
-               <img src="insta-icon.png" alt="insta" class="social-icon">
-               </a>
-               <a href="https://auth.geeksforgeeks.org/user/narendrawadhwa" target="_blank">
-               <img src="gfg.jpg" alt="gfg" class="social-icon">
-               </a>
-               <a href="https://www.linkedin.com/in/narendrawadhwa/" target="_blank">
-               <img src="linkedin-icon.png" alt="linkedin" class="social-icon">
-               </a>
-               <a href="https://www.hackerrank.com/narencreation101" target="_blank">
-                <img src="hacckerrank.png" alt="hacckerrank" class="social-icon">
-            </a> 
-
-
+                        <img src="assets/insta-icon.png" alt="insta" class="social-icon">
+                    </a>
+                    <a href="https://auth.geeksforgeeks.org/user/narendrawadhwa" target="_blank">
+                        <img src="assets/gfg.jpg" alt="gfg" class="social-icon">
+                    </a>
+                    <a href="https://www.linkedin.com/in/narendrawadhwa/" target="_blank">
+                        <img src="assets/linkedin-icon.png" alt="linkedin" class="social-icon">
+                    </a>
+                    <a href="https://www.hackerrank.com/narencreation101" target="_blank">
+                        <img src="assets/hacckerrank.png" alt="hacckerrank" class="social-icon">
+                    </a>
                 </div>
 
             </div>
         </div>
     </nav>
-    
+
     <main>
-        <h1 class="heading">Revering the Divine: A Tribute to Lord Krishna</h1>
-        <hr/>
-        <section class="image-on-right">
-            <div style="position: relative;">
-            <img src="krishna.jpg" alt="krishna" class="slide">
-            <img src="krishna1.jpg" alt="krishna" class="slide">
-            <img src="krishna2.jpg" alt="krishna" class="slide">
-            <img src="krishna3.jpg" alt="krishna" class="slide">
-            <img src="krishna4.jpg" alt="krishna" class="slide">
-         
-        </div>
-        <div class="nav">
-            <button onclick="goPrev()">prev</button>
-            <button onclick="goNext()">next</button>
-        </div>
-            <p class="description">
-                <span style="font-size: 25px; font-weight: bold;">Lord Krishna,</span> a central figure in Hinduism, is revered as the eighth avatar of Lord Vishnu. He was born in Mathura and raised in Vrindavan, India. Krishna's life, filled with divine leelas (miracles) and teachings, is recounted in Hindu scriptures like the Bhagavad Gita and the Mahabharata. He played a pivotal role in the Kurukshetra War, where he served as a charioteer and spiritual guide to Arjuna, imparting profound wisdom on duty, righteousness, and devotion. Krishna is often depicted as a blue-skinned deity playing the flute, symbolizing love, joy, and the union of the individual soul with the divine.
-            </p>
-           
-        </section>
-        
-        
+        <audio autoplay loop>
+            <source src="assets/flute.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <h1 class="heading">Revering the Divine: A Tribute to Shree Krishna</h1>
+        <hr />
+        <section class="intro">
+            <div class="description">
+                <p style="font-size: 17px;">
+                    <span style="font-size: 30px; font-weight: bold;">Shree Krishna,</span>
+                    a central figure in Hinduism, is
+                    revered as the eighth avatar of Bhagwan Shree Vishnu. He was born in Mathura and raised in
+                    Vrindavan, India.
+                    Krishna's life, filled with divine leelas (miracles) and teachings, is recounted in Hindu scriptures
+                    like the Bhagavad Gita and the Mahabharata. He played a pivotal role in the Kurukshetra War, where
+                    he
+                    served as a charioteer and spiritual guide to Arjuna, imparting profound wisdom on duty,
+                    righteousness,
+                    and devotion. Krishna is often depicted as a blue-skinned deity playing the flute, symbolizing love,
+                    joy, and the union of the individual soul with the divine. He is also adorned with a peacock feather
+                    on his head and holds a flute in his hands.
 
-        <section id="life" class="container-section">
-            <div class="container">
-                <div class="image">
-                    <img src="krishna.jpg" alt="Krishna Image">
-                </div>
-                <h2>Event 1</h2>
-                <div class="description"></div>
-                <span class="read-more-btn">Read More</span>
-
+                </p>
             </div>
-            
+            <div class="slider">
+                <img src="assets/krishna.jpg" alt="krishna" class="slide">
+                <img src="assets/krishna1.jpg" alt="krishna" class="slide">
+                <img src="assets/krishna2.jpg" alt="krishna" class="slide">
+                <img src="assets/krishna3.jpg" alt="krishna" class="slide">
+                <img src="assets/krishna4.jpg" alt="krishna" class="slide">
+            </div>
         </section>
-        
-        
+
+
+        <div class="nav">
+            <button onclick="goPrev()" style="margin-right: 180px;">&lt;</button>
+            <button onclick="goNext()">&gt;</button>
+        </div>
+        </section>
+
+
+        <section id="life-events" class="life-events">
+            <div class="section-heading">
+                <hr style="width: 25%; display: inline-block; margin-right: 10px;">
+                <h2>Life Events of Shree Krishna</h2>
+                <hr style="width: 25%; display: inline-block; margin-left: 10px;">
+            </div>
+            <div class="container-section">
+
+                <!-- krishna birth -->
+                <div class="container">
+                    <div class="image">
+                        <img src="assets/krishna-birth.jpg" alt="Krishna Image">
+                    </div>
+                    <div class="container-content">
+                        <h3 style="margin: 5px 0px;">Birth of Lord Krishna</h3>
+                        <p style="font-size: 14px;">Lord Krishna's birth in Mathura is a divine tale. It occurred on a
+                            stormy night in the prison cell of his parents, King Vasudeva </p>
+
+                        <span class="read-more">
+                            <a href="https://timesofindia.indiatimes.com/life-style/events/history-of-krishna-janmashtami-complete-story-of-lord-krishna-birth/articleshow/60000207.cms"
+                                target="_blank">
+                                Read More
+                            </a>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- vasudev carrying krishna to gokul  -->
+                <div class="container">
+                    <div class="image">
+                        <img src="assets/krishna-vasudev.jpg" alt="Krishna Image">
+                    </div>
+                    <div class="container-content">
+                        <h3 style="margin: 5px 0px;">Vasudev carried Baby Krishna to Gokul</h3>
+                        <p style="font-size: 14px;">Vasudeva carried baby Krishna on his head across the flooded Yamuna
+                            River, protecting him from King Kamsa's threat. </p>
+
+                        <span class="read-more">
+                            <a href="https://sanatanlok.com/2022/07/17/krishna-episode-9-taking-krishna-to-gokul-by-vasudeva-and-bringing-yogamaya-in-the-form-of-a-girl/"
+                                target="_blank">
+                                Read More
+                            </a>
+                        </span>
+
+                    </div>
+                </div>
+
+                <!-- killing sakatasura at 3months age -->
+                <div class="container">
+                    <div class="image">
+                        <img src="assets/killing-sakatasura.jpg" alt="Krishna Image">
+                    </div>
+                    <div class="container-content">
+                        <h3 style="margin: 5px 0px;">Sakatasura Vadh at 3 months</h3>
+                        <p style="font-size: 14px;">At just 3 months old, he demonstrated his divine power by defeating
+                            Sakatasura, a malevolent demon </p>
+
+                        <span class="read-more">
+                            <a href="https://www.mahapurana.com/bhagavat-purana-2/chaptter-nine/killing-of-shakat/"
+                                target="_blank">
+                                Read More
+                            </a>
+                        </span>
+
+                    </div>
+                </div>
+
+                <!-- killing Trinavarta at age of 1 year -->
+                <div class="container">
+                    <div class="image">
+                        <img src="assets/trinavarta-defeat.jpg" alt="Krishna Image">
+                    </div>
+                    <div class="container-content">
+                        <h3 style="margin: 5px 0px;">Trinavarta Vadh at 1</h3>
+                        <p style="font-size: 14px;">
+                            At the tender age of one, the divine child achieved a remarkable feat by vanquishing
+                            Trinavarta, a wicked demon who had taken the
+                        </p>
+
+                        <span class="read-more">
+                            <a href="https://iskcondesiretree.com/profiles/blogs/salvation-of-demon-trinavarta-by-lord-krishna"
+                                target="_blank">
+                                Read More
+                            </a>
+                        </span>
+
+                    </div>
+                </div>
+
+                <!-- Defeated Vatsasura at 2 -->
+                <div class="container">
+                    <div class="image">
+                        <img src="assets/vatsasura-killing.jpg" alt="Krishna Image">
+                    </div>
+                    <div class="container-content">
+                        <h3 style="margin: 5px 0px;">At Age 2: Vatsasura Conquered</h3>
+                        <p style="font-size: 14px;">At the age of two, Lord Krishna encountered Vatsasura, a malevolent
+                            demon disguised as a calf, while playing in the pastures </p>
+
+                        <span class="read-more">
+                            <a href="https://www.hindu-blog.com/2013/02/story-of-vatsasura-and-krishna-demon.html"
+                                target="_blank">
+                                Read More
+                            </a>
+                        </span>
+
+                    </div>
+                </div>
+
+                <!-- Defeated Bakasura at 4 -->
+                <div class="container">
+                    <div class="image">
+                        <img src="assets/killing-bakasura.jpg" alt="Krishna Image">
+                    </div>
+                    <div class="container-content">
+                        <h3 style="margin: 5px 0px;">Bakasura Vadh at 4</h3>
+                        <p style="font-size: 14px;">At the tender age of four, Lord Krishna confronted Bakasura, a
+                            menacing crane demon, in the village of Vrindavan. Bakasura had </p>
+
+                        <span class="read-more">
+                            <a href="https://www.harekrsna.com/philosophy/associates/demons/vrindaban/bakasura.htm"
+                                target="_blank">
+                                Read More
+                            </a>
+                        </span>
+
+                    </div>
+                </div>
+
+                <!-- Conquers Aghasura, Age 5 -->
+                <div class="container">
+                    <div class="image">
+                        <img src="assets/aghasura.jpg" alt="Krishna Image">
+                    </div>
+                    <div class="container-content">
+                        <h3 style="margin: 5px 0px;">Conquered Aghasura at the Age of 5</h3>
+                        <p style="font-size: 14px;">At the tender age of five, Krishna encountered Aghasura, a
+                            malevolent serpent demon. Aghasura, assuming the guise of a massive python, sought to devour
+                            Krishna and his companions. </p>
+
+                        <span class="read-more">
+                            <a href="https://www.harekrsna.com/philosophy/associates/demons/vrindaban/aghasura.htm"
+                                target="_blank">
+                                Read More
+                            </a>
+                        </span>
+
+                    </div>
+                </div>
+
+                <!-- Krishna Subdues Dhenukasura, Age 6 -->
+                <div class="container">
+                    <div class="image">
+                        <img src="assets/dhenukasura.jpg" alt="Krishna Image">
+                    </div>
+                    <div class="container-content">
+                        <h3 style="margin: 5px 0px;">Krishna Subdues Dhenukasura, Age 6</h3>
+                        <p style="font-size: 14px;">At the age of six, Krishna confronted Dhenukasura, a vile demon in
+                            the form of an ass. Dhenukasura terrorized the forests of Vrindavan, and Krishna, along with
+                            his friends, decided to put an end to this menace. </p>
+
+                        <span class="read-more">
+                            <a href="https://krishna.org/krishna-killing-the-dhenukasura-demon/" target="_blank">
+                                Read More
+                            </a>
+                        </span>
+
+                    </div>
+                </div>
+
+                <!-- Krishna Conquers Kaliya Serpent -->
+                <div class="container">
+                    <div class="image">
+                        <img src="assets/defeating-kaliya.jpg" alt="Krishna Image">
+                    </div>
+                    <div class="container-content">
+                        <h3 style="margin: 5px 0px;">Defeated Kaliya Serpent at 7</h3>
+                        <p style="font-size: 14px;">At the tender age of seven, Lord Krishna faced the venomous Kaliya
+                            serpent in the waters of the Yamuna River. </p>
+
+                        <span class="read-more">
+                            <a href="https://www.tell-a-tale.com/kaliya-daman-krishna-tames-serpent-kaliya-indian-mythological-story/"
+                                target="_blank">
+                                Read More
+                            </a>
+                        </span>
+
+                    </div>
+                </div>
+
+
+                <!-- Nalakuvara and Manigriva Liberation -->
+                <div class="container">
+                    <div class="image">
+                        <img src="assets/Nala-Kuvera-being-liberated-by-Lord-Krishna.jpg" alt="Krishna Image">
+                    </div>
+                    <div class="container-content">
+                        <h3 style="margin: 5px 0px;">Nalakuvara and Manigriva Liberation</h3>
+                        <p style="font-size: 14px;">When Nalakuvara and Manigriva, the demigods, concluded their
+                            prayers, young Lord Krishna, the ruler of Gokula, playfully bound to a wooden grinding
+                            mortar by Mother Yashoda, graced them with a smile. He acknowledged that He was aware of how
+                            His devoted Narada Muni had saved them from their pride, born of their extraordinary beauty
+                            and divine heritage. Their encounter with Narada had liberated them from potential
+                            damnation.
+
+                        </p>
+
+                        <span class="read-more">
+                            <a href="https://www.iskconbangalore.org/blog/deliverance-of-nalakuvara-and-manigriva/"
+                                target="_blank">
+                                Read More
+                            </a>
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!--  Stealing cloths of gopis -->
+                <div class="container">
+                    <div class="image">
+                        <img src="assets/krishna-stealing-the-cloths-of-the-gopis.jpeg" alt="Krishna Image">
+                    </div>
+                    <div class="container-content">
+                        <h3 style="margin: 5px 0px;">Stealing cloths of gopis</h3>
+                        <p style="font-size: 14px;">
+                            The Gopis bathed in the holy river Yamuna naked. It is an offence.. So, Krishna wanted to
+                            teach them lesson. So, He played like this.
+                        </p>
+                        <span class="read-more">
+                            <a href="https://krishnatoday.com/why-krishna-stole-dress-of-gopis/" target="_blank">
+                                Read More
+                            </a>
+                        </span>
+
+                    </div>
+                </div>
+
+
+                <!-- lifted Govardhana hill at 7 -->
+                <div class="container">
+                    <div class="image">
+                        <img src="assets/liftig-govardhan.jpg" alt="Krishna Image">
+                    </div>
+                    <div class="container-content">
+                        <h3 style="margin: 5px 0px;">Lifting Govardhana hill at age of 7</h3>
+                        <p style="font-size: 14px;">One of the most iconic episodes in Lord Krishna's life is his act of
+                            lifting Govardhan Hill. This awe-inspiring feat occurred when the people of Vrindavan sought
+                            protection from torrential rains unleashed by Lord Indra </p>
+
+                        <span class="read-more">
+                            <a href="https://krishnabhumi.in/blog/the-story-of-shri-krishna-lifting-govardhan-hill/"
+                                target="_blank">
+                                Read More
+                            </a>
+                        </span>
+
+                    </div>
+                </div>
+
+                <!-- Krishna's Butter Theft Feat ( Makhan Chori ) -->
+                <div class="container">
+                    <div class="image">
+                        <img src="assets/makhan-chori.jpg" alt="Krishna Image">
+                    </div>
+                    <div class="container-content">
+                        <h3 style="margin: 5px 0px;">Butter Theft Feat (Makhan Chori)</h3>
+                        <p style="font-size: 14px;">At the age of two, Lord Krishna encountered Vatsasura, a malevolent
+                            demon disguised as a
+                        </p>
+
+                        <span class="read-more">
+                            <a href="https://www.2indya.com/why-krishna-is-called-makhan-chor/" target="_blank">
+                                Read More
+                            </a>
+                        </span>
+
+                    </div>
+                </div>
+
+
+                <!-- Rasa Leela Dance -->
+                <div class="container">
+                    <div class="image">
+                        <img src="assets/rasa-leela.jpg" alt="Krishna Image">
+                    </div>
+                    <div class="container-content">
+                        <h3 style="margin: 5px 0px;">Rasa Dance Leela</h3>
+                        <p style="font-size: 14px;">
+                            At the age of 8, Lord Krishna performed the Rasa Dance, a divine and enchanting event in
+                            Hindu mythology. In Vrindavan, under the moonlit sky, Krishna danced with the gopis (cowherd
+                            maidens) </p>
+                        <span class="read-more">
+                            <a href="https://isha.sadhguru.org/in/en/wisdom/article/raas-leela-dance-passion"
+                                target="_blank">
+                                Read More
+                            </a>
+                        </span>
+
+                    </div>
+                </div>
+
+
+
+                <!-- Krishna Slaying Kamsa at 11 -->
+                <div class="container">
+                    <div class="image">
+                        <img src="assets/killing-kansa.jpg" alt="Krishna Image">
+                    </div>
+                    <div class="container-content">
+                        <h3 style="margin: 5px 0px;">Krishna Slaying Kamsa at 11</h3>
+                        <p style="font-size: 14px;">At the age of 11, Lord Krishna confronted and defeated the tyrant
+                            King Kamsa. Kamsa, driven by fear of a prophecy, had imprisoned Krishna's parents, Vasudeva
+                            and Devaki. Krishna's arrival in Mathura to challenge Kamsa marked a pivotal </p>
+
+                        <span class="read-more">
+                            <a href="https://isha.sadhguru.org/in/en/wisdom/article/how-krishna-killed-kamsa"
+                                target="_blank">
+                                Read More
+                            </a>
+                        </span>
+
+                    </div>
+                </div>
+
+
+
+                <!-- Krishna's Marriage to Rukmini at 16 -->
+                <div class="container">
+                    <div class="image">
+                        <img src="assets/marraige-with-rukmini.jpg" alt="Krishna Image">
+                    </div>
+                    <div class="container-content">
+                        <h3 style="margin: 5px 0px;">Krishna's Marriage to Rukmini at 16</h3>
+                        <p style="font-size: 14px;">At the age of 16, Lord Krishna's divine love story with Princess
+                            Rukmini unfolded. Rukmini, deeply in love with Krishna, sought to marry him. However, her
+                            brother Rukmi opposed the union and planned to marry her off to another prince, Shishupala.
+                        </p>
+
+                        <span class="read-more">
+                            <a href="https://ritsin.com/lord-krishna-rukmini-devi-marriage.html/" target="_blank">
+                                Read More
+                            </a>
+                        </span>
+
+                    </div>
+                </div>
+
+                <!--Jarasandha's Wrath and the Rise of Dwarka-->
+                <div class="container">
+                    <div class="image">
+                        <img src="assets/building-dwarka.jpg" alt="Krishna Image">
+                    </div>
+                    <div class="container-content">
+                        <h3 style="margin: 5px 0px;">Jarasandha's Wrath and the Rise of Dwarka</h3>
+                        <p style="font-size: 14px;">Jarasandha, fueled by rage over his son-in-law Kansa's death at the
+                            hands of Krishna, sought vengeance. His daughters, now widowed, fueled his fury further.
+                            Jarasandha made 17 relentless attempts to conquer Mathura, but Krishna's valor consistently
+                            thwarted him.
+
+                        </p>
+
+                        <span class="read-more">
+                            <a href="https://www.mahapurana.com/bhagavat-purana-2/chapter-ten/battles-with-jarasandh-and-construction-of-dwarikapuri/"
+                                target="_blank">
+                                Read More
+                            </a>
+                        </span>
+
+                    </div>
+                </div>
+
+                <!-- Sudama's Sacred Visit to Dwarka -->
+                <div class="container">
+                    <div class="image">
+                        <img src="assets/Krishna-and-Sudama-The-Bond-of-True-Friendship-1.jpg" alt="Krishna Image">
+                    </div>
+                    <div class="container-content">
+                        <h3 style="margin: 5px 0px;">Sudama's Sacred Visit to Dwarka</h3>
+                        <p style="font-size: 14px;">
+                            Sudama, a humble Brahmin and dear friend of Lord Krishna from their childhood, faced extreme
+                            poverty. Despite his family's dire condition,</p>
+
+                        <span class="read-more">
+                            <a href="https://iskcondwarka.org/blogs/krishna-and-sudama-the-bond-of-true-friendship/"
+                                target="_blank">
+                                Read More
+                            </a>
+                        </span>
+
+                    </div>
+                </div>
+
+                <!-- Jarasandha Vadh -->
+                <div class="container">
+                    <div class="image">
+                        <img src="assets/jarasandha-vadh.jpg" alt="Krishna Image">
+                    </div>
+                    <div class="container-content">
+                        <h3 style="margin: 5px 0px;">Jarasandha Vadh</h3>
+                        <p style="font-size: 14px;">Jarasandha, a formidable warrior and obstacle in the path of Emperor
+                            Yudhishthira's grand offering, had to be removed. The Pandavas, including Krishna, Bhima,
+                            and Arjuna, disguised themselves as brahmins and journeyed to Magadha to confront
+                            Jarasandha.
+                        </p>
+
+                        <span class="read-more">
+                            <a href="https://en.wikipedia.org/wiki/Jarasandha" target="_blank">
+                                Read More
+                            </a>
+                        </span>
+
+                    </div>
+                </div>
+
+                <!-- Shisupal Vadh -->
+                <div class="container">
+                    <div class="image">
+                        <img src="assets/shis.jpg" alt="Krishna Image">
+                    </div>
+                    <div class="container-content">
+                        <h3 style="margin: 5px 0px;">Shisupal Vadh at Rajsuya Yagya</h3>
+                        <p style="font-size: 14px;">
+                            Shishupala, a cousin of Lord Krishna and an enemy of the Yadava clan, At the royal assembly
+                            in Yudhishthira's Rajasuya Yagna, Shishupala publicly insulted Krishna and Draupadi.
+                        </p>
+                        <span class="read-more">
+                            <a href="https://www.vedantu.com/stories/krishna-kills-shishupal" target="_blank">
+                                Read More
+                            </a>
+                        </span>
+                    </div>
+                </div>
+
+
+                <!--  Krishna's Divine Intervention to Protect Draupadi -->
+                <div class="container">
+                    <div class="image">
+                        <img src="assets/krishna-saving-draupadi.jpg" alt="Krishna Image">
+                    </div>
+                    <div class="container-content">
+                        <h3 style="margin: 5px 0px;">Krishna's Divine Intervention to Protect Draupadi</h3>
+                        <p style="font-size: 14px;">
+                            During the game of dice in the Kaurava court, Draupadi, the wife of the Pandavas, was
+                            dragged into the assembly by Dushasana at the instigation of Duryodhana. She sought help
+                            from her husbands and elders,
+                        </p>
+                        <span class="read-more">
+                            <a href="https://www.timesnownews.com/india/article/when-krishna-saved-draupadi-during-attempted-cheerharan-incident-in-mahabharata-his-gift-for-a-past-gesture/577986"
+                                target="_blank">
+                                Read More
+                            </a>
+                        </span>
+
+                    </div>
+                </div>
+
+                <!-- Krishna on Pandavas side -->
+                <div class="container">
+                    <div class="image">
+                        <img src="assets/krishna-on-pandavs-side.jpg" alt="Krishna Image">
+                    </div>
+                    <div class="container-content">
+                        <h3 style="margin: 5px 0px;">Krishna on Pandavas side</h3>
+                        <p style="font-size: 14px;">Before the Mahabharata war, both "Arjuna" & "Duryodhana" (the two
+                            opponents in the war) went to "Lord Krishna" for His help in the war. </p>
+
+                        <span class="read-more">
+                            <a href="https://www.speakingtree.in/allslides/narayana-or-narayani-sena-how-arjuna-chose-shri-krishna/135216
+                            " target="_blank">
+                                Read More
+                            </a>
+                        </span>
+
+                    </div>
+                </div>
+
+
+
+                <!-- Vishvarupa's Revelation to Arjuna-->
+                <div class="container">
+                    <div class="image">
+                        <img src="assets/vishvarupa.jpg" alt="Krishna Image">
+                    </div>
+                    <div class="container-content">
+                        <h3 style="margin: 5px 0px;">Vishvarupa's Revelation to Arjuna</h3>
+                        <p style="font-size: 14px;">
+                            During the Kurukshetra War, Lord Krishna bestowed a divine vision, known as Vishvarupa or
+                            the Universal Form, upon Arjuna. As Arjuna stood on the battlefield filled with doubt and
+                            moral dilemma, Krishna revealed his cosmic, multifaceted form.
+                        </p>
+
+                        <span class="read-more">
+                            <a href="https://www.supremeknowledge.org/bhagavad-gita/chapter-11/" target="_blank">
+                                Read More
+                            </a>
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!--  Krishna and the Bhagavad Gita -->
+                <div class="container">
+                    <div class="image">
+                        <img src="assets/bhagwata-geeta.jpg" alt="Krishna Image">
+                    </div>
+                    <div class="container-content">
+                        <h3 style="margin: 5px 0px;"> Krishna and the Bhagavad Gita</h3>
+                        <p style="font-size: 14px;">
+                            The Bhagavad Gita, often referred to as the Gita, is a 700-verse Hindu scripture that forms
+                            a profound part of the Indian epic Mahabharata. In this sacred text, Lord Krishna imparts
+                            spiritual wisdom and guidance to the warrior prince Arjuna</p>
+
+                        <span class="read-more">
+                            <a href="https://en.wikipedia.org/wiki/Bhagavad_Gita" target="_blank">
+                                Read More
+                            </a>
+                        </span>
+                    </div>
+                </div>
+        </section>
+
+
         <section id="lessons">
-            <h2>Key Lessons from Bhagavad Gita</h2>
+            <div class="section-heading">
+                <hr style="width: 20%; display: inline-block; margin-right: 10px;">
+                <h2>Key Lessons from Bhagavad Gita</h2>
+                <hr style="width: 20%; display: inline-block; margin-left: 10px;">
+            </div>
             <ol>
-                <li><strong style="color: #0074cc;">Dharma and Duty:</strong> Fulfill your duty with dedication, without attachment to results.</li>
-                <li><strong style="color: #0074cc;">Detachment:</strong> Perform actions with detachment from success or failure.</li>
-                <li><strong style="color: #0074cc;">Self-Realization:</strong> Seek to understand your true self, beyond the physical body and mind.</li>
-                <li><strong style="color: #0074cc;">Equality:</strong> Recognize the divinity in all beings and treat everyone equally.</li>
-                <li><strong style="color: #0074cc;">Devotion and Surrender:</strong> Practice sincere devotion and surrender to God for spiritual growth.</li>
+                <li><strong style="color: #003a6e; font-size: 20px;">Live in the present</strong> <br>
+                <p>This is one of the most important lessons kids can learn from Krishna. Even though Krishna focuses on and plans for the future, he never fails to live in the present. He practised mindfulness, the act of focusing and living in the moment instead of worrying about the past or the future. This skill helps one make memories and live a less stressful life. 
+                </p></li>
+
+                <li><strong style="color: #003a6e; font-size: 20px;">To be dutiful</strong> <br>
+                <p>TDespite being the Lord of the universe, Krishna never shied away from his duties. It is one of the things he is well-known for. Krishna stressed the importance of completing your duties by yourself. He taught people to fulfil their duties without focusing on the outcome. He willed people to enjoy the journey rather than be driven by the results.
+                </p></li>
+
+                <li><strong style="color: #003a6e; font-size: 20px;">Never give up on what you love</strong> <br>
+                <p>Even though he was burdened with saving the kingdom, being a good king, and answering his devotee’s every prayer, Krishna always made time for what he loved. Krishna’s love for his flute and music is not surprising to anyone who has read about him. Krishna never stopped pursuing his love for music and it brought him peace even in the midst of a war. Regardless of what is going on in your life, it is always important to spare time for the things you love.
+                </p></li>
+
+                <li><strong style="color: #003a6e; font-size: 20px;">Be humble</strong> <br>
+                <p>One would expect the Lord of the universe to be haughty or above all but that is never the way Krishna behaved. He always stayed humble and respected his elders. This character trait made him loveable and earned him devotees from all over the world. Krishna showed that you do not win over people by power but you win them over by being kind and showing everyone respect.
+                </p></li>
+
+                <li><strong style="color: #003a6e; font-size: 20px;">Sometimes sacrifice is necessary</strong><br>
+                <p>Krishna had to make some tough decisions during the battle of Kurukshetra including making some sacrifices to win the battle. Sometimes, life demands sacrifices, be it getting out of your comfort zone or putting your ego second. In order to succeed in life, you should be able to sacrifice and compromise at times for the bigger picture. 
+                </p></li>
+
+                <li><strong style="color: #003a6e; font-size: 20px;">Everyone deserves respect</strong> <br>
+                    <p>Krishna respected every person, animal, or living being he encountered, He believed that everyone deserves respect regardless of their societal status or job. Spiritually, we are all the same and Krishna showed us that by treating everyone with the same respect.
+                    </p></li>
+
+                    <li><strong style="color: #003a6e; font-size: 20px;">The importance of friendship</strong> <br>
+                    <p>Krishna valued his friendships greatly which is evident by his love for his childhood friend Sudhama. When Krishna found out that Sudhama was struggling to put food on the table, he gifted him with shelter, food, and luxury. This can teach kids a lesson or two about being loyal to our friends or being there for them in their time of need.
+                    </p></li>
+
+                    <li><strong style="color: #003a6e; font-size: 20px;">Happiness does not come from materialistic things</strong><br>
+                    <p>This is one of the most imperative lessons you can teach your child. Krishna always preached about finding happiness within oneself as opposed to relying on other people or materialistic things. While a new toy or a video game might put a smile on your child’s face, it is temporary. True happiness lies in the little things in life and the sooner your children realise that, the happier they will be.
+                    </p></li>
+
+                    <li><strong style="color: #003a6e; font-size: 20px;">Everything happens for a reason</strong><br>
+                    <p>Krishna was a big believer in fate and destiny. While one should not always rely on fate, it helps to think that behind everything, there is a reason. Whether good or bad, everything happens for a reason. The key lies in staying calm and trusting yourself and the universe.
+                    </p></li>
+
+                    <li><strong style="color: #003a6e; font-size: 20px;">Unconditional love is the key</strong> <br>
+                    <p>Everything Krishna did was fuelled by unconditional love. His kindness, humility, and affection for people around him were because of his unconditional love. Regardless of what curveball life throws at you, if you lead by love, you will never fail.
+                    </p></li>
             </ol>
         </section>
 
         <section id="legacy">
             <h2>Legacy</h2>
-            <p>Lord Krishna's teachings continue to inspire millions, promoting a life of righteousness, self-realization, and devotion to God.</p>
+            <p>Lord Krishna's teachings continue to inspire millions, promoting a life of righteousness,
+                self-realization, and devotion to God.</p>
         </section>
     </main>
     <footer style="background-color: #354e9c; color: #fff;">
@@ -127,5 +693,6 @@
     <script src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-    </body>
-    </html>
+</body>
+
+</html>

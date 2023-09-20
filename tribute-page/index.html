@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=PT+Mono&family=PT+Serif+Caption&family=Style+Script&family=Yesteryear&display=swap" rel="stylesheet">
+    <title>Tribute to Lord Krishna</title>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="flute.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    
+    <nav>
+        <div class="logo">
+            <a href="#" id="logo-link">
+                Tribute to Shree Krishna<img src="feather.png" alt="Feather" class="logo-image"> 
+            </a>
+        </div>
+        <ul>
+            <li><a href="#life">Life of Lord Krishna</a></li>
+            <li><a href="#bhagavad-gita">Bhagavad Gita</a></li>
+            <li><a href="#lessons">Key Lessons</a></li>
+            <li><a href="#legacy">Legacy</a></li>
+        </ul>
+        <div class="profile-container">
+            <img src="profile-img.png" class="profile-img" onclick="toggleMenu()">
+            <span class="green-circle"></span>
+        </div>
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <div class="user-info">
+                    <img src="profile-img.png">
+                    <span class="green-circle-profile"></span>
+                    <h3>Narendra Wadhwa</h3>
+                </div>
+                <hr>
+                <h5 style="color: #003a6e ;text-align: center; margin:15px 0px 2px 0px">My Social Media</h5>
+                <div class="social-links">
+                    <a href="https://github.com/narendrawadhwa" target="_blank">
+                        <img src="github-icon.png" alt="github" class="social-icon">
+                    </a>
+                    <a href="https://www.instagram.com/_narennn._/" target="_blank">
+               <img src="insta-icon.png" alt="insta" class="social-icon">
+               </a>
+               <a href="https://auth.geeksforgeeks.org/user/narendrawadhwa" target="_blank">
+               <img src="gfg.jpg" alt="gfg" class="social-icon">
+               </a>
+               <a href="https://www.linkedin.com/in/narendrawadhwa/" target="_blank">
+               <img src="linkedin-icon.png" alt="linkedin" class="social-icon">
+               </a>
+               <a href="https://www.hackerrank.com/narencreation101" target="_blank">
+                <img src="hacckerrank.png" alt="hacckerrank" class="social-icon">
+            </a> 
+
+
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+        <h1 class="heading">Revering the Divine: A Tribute to Lord Krishna</h1>
+        <hr/>
+        <section class="image-on-right">
+            <div style="position: relative;">
+            <img src="krishna.jpg" alt="krishna" class="slide">
+            <img src="krishna1.jpg" alt="krishna" class="slide">
+            <img src="krishna2.jpg" alt="krishna" class="slide">
+            <img src="krishna3.jpg" alt="krishna" class="slide">
+            <img src="krishna4.jpg" alt="krishna" class="slide">
+         
+        </div>
+        <div class="nav">
+            <button onclick="goPrev()">prev</button>
+            <button onclick="goNext()">next</button>
+        </div>
+            <p class="description">
+                <span style="font-size: 25px; font-weight: bold;">Lord Krishna,</span> a central figure in Hinduism, is revered as the eighth avatar of Lord Vishnu. He was born in Mathura and raised in Vrindavan, India. Krishna's life, filled with divine leelas (miracles) and teachings, is recounted in Hindu scriptures like the Bhagavad Gita and the Mahabharata. He played a pivotal role in the Kurukshetra War, where he served as a charioteer and spiritual guide to Arjuna, imparting profound wisdom on duty, righteousness, and devotion. Krishna is often depicted as a blue-skinned deity playing the flute, symbolizing love, joy, and the union of the individual soul with the divine.
+            </p>
+           
+        </section>
+        
+        
+
+        <section id="life" class="container-section">
+            <div class="container">
+                <div class="image">
+                    <img src="krishna.jpg" alt="Krishna Image">
+                </div>
+                <h2>Event 1</h2>
+                <div class="description"></div>
+                <span class="read-more-btn">Read More</span>
+
+            </div>
+            
+        </section>
+        
+        
+        <section id="lessons">
+            <h2>Key Lessons from Bhagavad Gita</h2>
+            <ol>
+                <li><strong style="color: #0074cc;">Dharma and Duty:</strong> Fulfill your duty with dedication, without attachment to results.</li>
+                <li><strong style="color: #0074cc;">Detachment:</strong> Perform actions with detachment from success or failure.</li>
+                <li><strong style="color: #0074cc;">Self-Realization:</strong> Seek to understand your true self, beyond the physical body and mind.</li>
+                <li><strong style="color: #0074cc;">Equality:</strong> Recognize the divinity in all beings and treat everyone equally.</li>
+                <li><strong style="color: #0074cc;">Devotion and Surrender:</strong> Practice sincere devotion and surrender to God for spiritual growth.</li>
+            </ol>
+        </section>
+
+        <section id="legacy">
+            <h2>Legacy</h2>
+            <p>Lord Krishna's teachings continue to inspire millions, promoting a life of righteousness, self-realization, and devotion to God.</p>
+        </section>
+    </main>
+    <footer style="background-color: #354e9c; color: #fff;">
+        <p>Website created in tribute to Lord Krishna. &copy; 2023</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    </body>
+    </html>

@@ -48,3 +48,20 @@ function toggleMenu(){
 const audio = document.getElementById('background-audio');
 audio.play();
 
+
+
+//
+var images = document.querySelectorAll('.gallery img');
+
+images.forEach(function (image) {
+    image.addEventListener('click', function () {
+        var imageNumber = this.getAttribute('data-image');
+        var details = document.getElementById('details' + imageNumber);
+        
+        if (details.style.display === 'block') {
+            details.style.display = 'none';
+        } else {
+            details.style.display = 'block';
+        }
+    });
+});

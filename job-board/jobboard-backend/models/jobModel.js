@@ -1,6 +1,6 @@
 
 const mongoose = require('mongoose');
-const {ObjectId} = mongoose.Schema;
+const { ObjectId } = mongoose.Schema;
 
 
 const jobSchema = new mongoose.Schema({
@@ -11,6 +11,7 @@ const jobSchema = new mongoose.Schema({
         required: [true, 'Title is required'],
         maxlength: 70,
     },
+
     description: {
         type: String,
         trim: true,
@@ -38,6 +39,9 @@ const jobSchema = new mongoose.Schema({
         ref: "User",
         required: true
     },
+
+
+
 }, { timestamps: true })
 
 module.exports = mongoose.model("Job", jobSchema);

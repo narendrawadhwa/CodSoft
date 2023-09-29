@@ -51,7 +51,7 @@ exports.updateJob = async (req, res, next) => {
 }
 
 
-//update job by id.
+//show jobs
 exports.showJobs = async (req, res, next) => {
 
     //enable search 
@@ -73,21 +73,33 @@ exports.showJobs = async (req, res, next) => {
     let cat = req.query.cat;
     let categ = cat !== '' ? cat : ids;
 
+     //jobs by location
+     let locations = [];
+     const jobByLocation = await Job.find({}, { location: 1 });
+     jobByLocation.forEach(val => {
+         locations.push(val.location);
+     });
+     let setUniqueLocation = [...new Set(locations)];
+     let location = req.query.location;
+     let locationFilter = location !== '' ? location : setUniqueLocation;
+
+
 
     //enable pagination
     const pageSize = 5;
     const page = Number(req.query.pageNumber) || 1;
-    //const count = await Job.find({}).estimatedDocumentCount();
-    const count = await Job.find({ ...keyword, jobType: categ }).countDocuments();
+    // const count = await Job.find({}).estimatedDocumentCount();
+    const count = await Job.find({ ...keyword, jobType: categ, location: locationFilter}).countDocuments();
 
     try {
-        const jobs = await Job.find({ ...keyword, jobType: categ }).skip(pageSize * (page - 1)).limit(pageSize)
+        const jobs = await Job.find({ ...keyword, jobType: categ, location: locationFilter }).sort({ createdAt: -1 }).skip(pageSize * (page - 1)).limit(pageSize)
         res.status(200).json({
             success: true,
             jobs,
             page,
             pages: Math.ceil(count / pageSize),
-            count
+            count,
+            setUniqueLocation
         })
     } catch (error) {
         next(error);

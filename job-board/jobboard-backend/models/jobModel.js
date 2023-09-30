@@ -2,6 +2,7 @@
 const mongoose = require('mongoose');
 const { ObjectId } = mongoose.Schema;
 
+const experienceLevels = ["Fresher", "1-3 Yrs", "3-5 Yrs", "5-7 Yrs", "7-9 Yrs", "9-11 Yrs", "11+ Yrs"];
 
 const jobSchema = new mongoose.Schema({
 
@@ -37,6 +38,16 @@ const jobSchema = new mongoose.Schema({
     user: {
         type: ObjectId,
         ref: "User",
+        required: true
+    },
+    createdAtDate: {
+        type: Date,
+        default: Date.now,
+    },
+    experience: {
+        type: String,
+        enum: experienceLevels,
+        default: "Fresher", 
         required: true
     },
 

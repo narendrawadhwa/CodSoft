@@ -2,6 +2,7 @@ const Job = require('../models/jobModel');
 const JobType = require('../models/jobTypeModel');
 const ErrorResponse = require('../utils/errorResponse');
 
+
 //create job
 exports.createJob = async (req, res, next) => {
     try {
@@ -11,7 +12,9 @@ exports.createJob = async (req, res, next) => {
             salary: req.body.salary,
             location: req.body.location,
             jobType: req.body.jobType,
-            user: req.user.id
+            user: req.user.id,
+            createdAtDate: req.body.createdAtDate,
+            experience: req.body.experience
         });
         res.status(201).json({
             success: true,

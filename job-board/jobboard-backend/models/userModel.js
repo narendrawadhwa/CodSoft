@@ -28,8 +28,8 @@ const jobsHistorySchema = new mongoose.Schema({
     },
     applicationStatus: {
         type: String,
-        enum: ['pending', 'accepted', 'rejected'],
-        default: 'pending'
+        enum: ['Pending', 'Accepted', 'Rejected'],
+        default: 'Pending'
     },
     user: {
         type: ObjectId,

@@ -85,6 +85,7 @@ exports.createUserJobsHistory = async (req, res, next) => {
                 description,
                 salary,
                 location,
+                applicationStatus,
                 user: req.user._id
             }
             currentUser.jobsHistory.push(addJobHistory);

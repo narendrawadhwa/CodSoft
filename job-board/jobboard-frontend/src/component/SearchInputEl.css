@@ -1,0 +1,19 @@
+/* Default styles for both mobile and desktop */
+.search-form {
+    width: 50%;
+    position: absolute;
+    left: 25%;
+  }
+  
+  /* Styles for mobile screens (max-width: 767px) */
+  @media (max-width: 767px) {
+    .search-form {
+      width: 100%; /* Full width for mobile screens */
+      left: 0; /* Remove left positioning for mobile screens */
+      scale: 0.7;
+    }
+    .btn{
+min-width: 140px;    
+}
+  }
+  

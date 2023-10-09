@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Sidebar, Menu, MenuItem, menuClasses, useProSidebar } from 'react-pro-sidebar';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
@@ -11,7 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import logoDashboard from '../../images/hr-project.png'
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { userLogoutAction } from '../../redux/actions/userAction';
+import { userLogoutAction, userProfileAction } from '../../redux/actions/userAction';
 import { useNavigate } from 'react-router-dom';
 import LoginIcon from '@mui/icons-material/Login';
 
@@ -23,20 +23,25 @@ const SidebarAdm = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    useEffect(() => {
+        dispatch(userProfileAction());
+    }, []);
+
     //log out 
     const logOut = () => {
         dispatch(userLogoutAction());
         window.location.reload(true);
         setTimeout(() => {
             navigate('/');
-        }, 500)
+        }, 300);
+
     }
 
 
     return (
         <>
-            <Sidebar backgroundColor="#fff" style={{ borderRightStyle: "none",  boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)'  }}>
-                <Box sx={{ display: "flex", justifyContent: "space-between", flexDirection: "column", height: "100%"}}>
+            <Sidebar style={{ borderRightStyle: "none", backgroundColor:'#fff', boxShadow: '0 0 5px rgba(0, 0, 0, 0.2)'  }}>
+                <Box sx={{ display: "flex", justifyContent: "space-between", flexDirection: "column", height: "95%"}}>
                     <Box>
                         <Box sx={{ pt: 3, pb: 5, display: "flex", justifyContent: "center" }}>
 
@@ -75,15 +80,15 @@ const SidebarAdm = () => {
                             {
                                 userInfo && userInfo.role === 1 ?
                                     <>
-                                        <MenuItem component={<Link to="/admin/dashboard" />} icon={<DashboardIcon />}> Dashboard </MenuItem>
-                                        <MenuItem component={<Link to="/admin/users" />} icon={<GroupAddIcon />}> Users </MenuItem>
-                                        <MenuItem component={<Link to="/admin/jobs" />} icon={<WorkIcon />}> Jobs </MenuItem>
-                                        <MenuItem component={<Link to="/admin/category" />} icon={<CategoryIcon />}> Category </MenuItem>
+                                        <MenuItem component={<Link to="/admin/dashboard" className='menu-item' />} icon={<DashboardIcon />}><span className='menu-item-text'> Dashboard</span> </MenuItem>
+                                        <MenuItem component={<Link to="/admin/users" className='menu-item' />} icon={<GroupAddIcon />}><span className='menu-item-text'> Users</span> </MenuItem>
+                                        <MenuItem component={<Link to="/admin/jobs" className='menu-item' />} icon={<WorkIcon />}><span className='menu-item-text'> Jobs</span> </MenuItem>
+                                        <MenuItem component={<Link to="/admin/category" className='menu-item' />} icon={<CategoryIcon />}><span className='menu-item-text'>Category</span> </MenuItem>
                                     </> :
                                     <>
-                                        <MenuItem component={<Link to="/user/dashboard" />} icon={<DashboardIcon />}> Dashboard </MenuItem>
-                                        <MenuItem component={<Link to="/user/jobs" />} icon={<WorkHistoryIcon />}> Applied Jobs </MenuItem>
-                                        <MenuItem component={<Link to="/user/info" />} icon={<Person3Icon />}> Personal Info </MenuItem>
+                                        <MenuItem component={<Link to="/user/dashboard" className='menu-item' />} icon={<DashboardIcon />} ><span className='menu-item-text'>Dashboard</span> </MenuItem>
+                                        <MenuItem component={<Link to="/user/jobs" className='menu-item' />} icon={<WorkHistoryIcon />}><span className='menu-item-text'>Applied Jobs</span> </MenuItem>
+                                        <MenuItem component={<Link to="/user/info" className='menu-item' />} icon={<Person3Icon />}><span className='menu-item-text'>Personal Info</span> </MenuItem>
                                     </>
                             }
 
@@ -107,7 +112,7 @@ const SidebarAdm = () => {
 
                             }}
                         >
-                            <MenuItem onClick={logOut} icon={<LoginIcon />}>   Log out </MenuItem>
+                           <Link style={{ textDecoration: "none", color: palette.primary.main }} className='menu-item' onClick={logOut}> <MenuItem icon={<LoginIcon />}><span className='menu-item-text'>Log out </span></MenuItem></Link>
                         </Menu>
                     </Box>
                 </Box>

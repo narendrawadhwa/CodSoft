@@ -46,7 +46,7 @@ const CardElement = ({ jobTitle, description, salary, location, experience, crea
           <div style={{ display: 'flex', alignItems: 'self-start' }}>
             <DescriptionIcon style={{ marginRight: '8px', marginTop:'3px' }} sx={{ fontSize: 18, color: palette.secondary.darkBlue }} />
             <Typography variant="body2" sx={{ color: palette.primary.darkGrey, fontSize: 17 }}>
-              {description.split(" ").slice(0, 8).join(" ") + "..."}
+              {description.split(" ").slice(0, 10).join(" ") + "..."}
             </Typography>
           </div>
           <Typography variant="body2" component="div" style={{ padding: '10px 0px 5px 0px', display: 'flex', fontSize: '15px', alignItems: 'center' }} sx={{ color: palette.primary.darkGrey, }}>

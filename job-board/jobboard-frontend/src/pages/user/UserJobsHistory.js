@@ -1,41 +1,45 @@
-import { Typography } from '@mui/material'
-import { Box } from '@mui/material'
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import JobsHistoryCard from '../../component/JobsHistoryCard'
-import { userProfileAction } from '../../redux/actions/userAction'
+import { Typography } from '@mui/material';
+import { Box, CircularProgress } from '@mui/material'; // Import CircularProgress for the loading indicator
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import JobsHistoryCard from '../../component/JobsHistoryCard';
+import { userProfileAction } from '../../redux/actions/userAction';
+import { useTheme } from '@mui/material';
 
 const UserJobsHistory = () => {
-    const { user } = useSelector(state => state.userProfile);
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(userProfileAction());
-    }, []);
+    const { user, loading } = useSelector(state => state.userProfile);
+    const { palette } = useTheme();
 
+    useEffect(() => {
+        
+    }, []); 
     return (
         <>
             <Box>
-                <Typography variant="h4" sx={{ color: "#fafafa" }}> Jobs History</Typography>
-                <Box>
-                    {
-                        user && user.jobsHistory.map((history, i) => (
+                <Typography variant="h6" sx={{ color: palette.secondary.main }}> Jobs History</Typography>
+                {loading ? ( // Conditional rendering based on the loading state
+                    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}>
+                        <CircularProgress />
+                    </Box>
+                ) : (
+                    <Box>
+                        {user && user.jobsHistory.map((history, i) => (
                             <JobsHistoryCard
                                 key={i}
                                 id={history._id}
                                 jobTitle={history.title}
                                 description={history.description}
-                                category=''
+                                category=""
                                 location={history.location}
-                                applicationStatus = {history.applicationStatus}
-                                salary = {history.salary}
-
+                                applicationStatus={history.applicationStatus}
+                                salary={history.salary}
                             />
-                        ))
-                    }
-                </Box>
+                        ))}
+                    </Box>
+                )}
             </Box>
         </>
-    )
+    );
 }
 
-export default UserJobsHistory
+export default UserJobsHistory;

@@ -68,8 +68,10 @@ exports.logout = (req, res, next) => {
     res.clearCookie('token');
     res.status(200).json({
         success: true,
-        message: "logged out"
-    })
+        message: "logged out",
+    });
+    res.redirect('/');
+
 }
 
 // user profile

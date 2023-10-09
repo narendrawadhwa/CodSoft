@@ -10,13 +10,14 @@ import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
+import { ToastContainer, toast } from 'react-toastify';
+
 import MenuItem from '@mui/material/MenuItem';
-import WorkIcon from '@mui/icons-material/Work';
 import { Link, useNavigate } from 'react-router-dom';
 import { useTheme } from '@emotion/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { userLogoutAction } from '../redux/actions/userAction';
-
+const logo = require('../images/logo1.png');
 const pages = ['Home', 'Log In'];
 
 
@@ -49,9 +50,7 @@ const Navbar = () => {
     const logOutUser = () => {
         dispatch(userLogoutAction());
         window.location.reload(true);
-        setTimeout(() => {
             navigate('/');
-        }, 200)
     }
 
 
@@ -61,7 +60,6 @@ const Navbar = () => {
             <Container >
                 {/* principal Menu */}
                 <Toolbar disableGutters>
-                    <WorkIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
                     <Typography
                         variant="h6"
                         noWrap
@@ -78,6 +76,8 @@ const Navbar = () => {
                         }}
                     >
                         JOB PORTAL
+                        <img src={logo} style={{ width: '40px' }} />
+
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -116,7 +116,6 @@ const Navbar = () => {
                             ))}
                         </Menu>
                     </Box>
-                    <WorkIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
                     <Typography
                         variant="h6"
                         noWrap
@@ -133,8 +132,10 @@ const Navbar = () => {
                             textDecoration: 'none',
                         }}
                     >
-                        JOB PORTAL
+                        JOB PORTAL                    <img src={logo} style={{ width: '40px' }} />
+
                     </Typography>
+
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {/* menu desktop */}
 
@@ -170,22 +171,41 @@ const Navbar = () => {
                             open={Boolean(anchorElUser)}
                             onClose={handleCloseUserMenu}
                         >
-
+<Link style={{ textDecoration: "none", color: palette.primary.main }} to="/admin/dashboard">
                             <MenuItem onClick={handleCloseUserMenu}>
-                                <Typography textAlign="center"><Link style={{ textDecoration: "none", color: palette.primary.main }} to="/admin/dashboard">Dashboard</Link></Typography>
+                                <Typography textAlign="center">Admin Dashboard</Typography>
                             </MenuItem>
-
-                            {
-                                !userInfo ?
-
+                            </Link>
+                            {userInfo ? (
+                                <Link style={{ textDecoration: 'none', color: palette.primary.main }} to="/user/dashboard">
                                     <MenuItem onClick={handleCloseUserMenu}>
-                                        <Typography textAlign="center"><Link style={{ textDecoration: "none", color: palette.primary.main }} to="/login">Log In</Link></Typography>
-                                    </MenuItem> :
-
-                                    <MenuItem onClick={logOutUser}>
-                                        <Typography style={{ textDecoration: "none", color: palette.primary.main }} textAlign="center">Log Out</Typography>
+                                        <Typography textAlign="center">User Dashboard</Typography>
                                     </MenuItem>
-                            }
+                                </Link>
+                            ) : (
+                                <MenuItem onClick={() => toast.warning('Please log in to access this page')}>
+                                    <Typography style={{ textDecoration: 'none', color: palette.primary.main }} textAlign="center">
+                                        User Dashboard
+                                    </Typography>
+                                </MenuItem>
+                            )}
+
+
+                            {!userInfo ? (
+            <Link style={{ textDecoration: "none", color: palette.primary.main }} to="/login">
+              <MenuItem onClick={handleCloseUserMenu}>
+                <Typography textAlign="center">
+                 Log In
+                </Typography>
+              </MenuItem>
+              </Link>
+            ) : (
+              <MenuItem onClick={logOutUser}>
+                <Typography style={{ textDecoration: "none", color: palette.primary.main }} textAlign="center">Log Out</Typography>
+              </MenuItem>
+            )}
+
+      
 
 
                         </Menu>

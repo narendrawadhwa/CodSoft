@@ -1,41 +1,34 @@
 import React from 'react';
 import { Box, IconButton, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import EmailIcon from '@mui/icons-material/Email';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
-const profileImg = require('../images/profile-img.png');
-const linkedIn = require('../images/linkedin-icon.png');
-const gfg = require('../images/gfg.jpg');
-const instagram = require('../images/insta-icon.png');
-const hackerRank = require('../images/hackerrank.png');
-const gitHub = require('../images/github-icon.png');
-const mail = require('../images/mail-icon.png');
+
+const logo = require('../images/logo.png');
 
 const socialMedia = [
   {
-    logo: linkedIn,
+    icon: <LinkedInIcon />,
     link: 'https://www.linkedin.com/in/narendrawadhwa',
   },
   {
-    logo: gitHub,
+    icon: <GitHubIcon />,
     link: 'https://github.com/narendrawadhwa',
   },
   {
-    logo: instagram,
+    icon: <InstagramIcon />,
     link: 'https://www.instagram.com/_narennn._/',
   },
   {
-    logo: hackerRank,
-    link: 'https://www.hackerrank.com/narencreation101',
-  },
-  {
-    logo: gfg,
-    link: 'https://auth.geeksforgeeks.org/user/narendrawadhwa',
-  },
-  {
-    logo: mail,
+    icon: <EmailIcon />,
     link: 'mailto:narendrawadhwa06@gmail.com',
   },
 ];
+
 
 const Footer = () => {
   const { palette } = useTheme();
@@ -48,55 +41,95 @@ const Footer = () => {
           display:'flex',
           flexDirection: isMobile ? 'column' : 'row', 
           justifyContent: isMobile ? 'center' : 'space-between',
-          alignItems: 'center',
-          height: isMobile ? '125px' : '70px', 
+          alignItems: 'flex-start',
+          minHeight: isMobile ? '200px' : '150px', 
           bgcolor: palette.secondary.darkBlue,
-          padding: isMobile ? '15px 10px' : '0 50px', 
+          padding: isMobile ? '20px 12px' : '20px 50px', 
+          color:'white',
+          boxShadow:'0px -3px 10px rgba(0, 0, 0, 0.2)'
         }}
       >
         {/* Left Side */}
+          <Box sx={{
+          display:'flex',
+          flexDirection:  'column', 
+          margin:'10px',
+          maxWidth:'300px'
+         }} 
+          style={{ color: 'white' }}>
+            <img src={logo} style={{maxWidth: isMobile ? '160px' : '200px'}}/>
+            <div style ={{padding:'10px 0px', display:'flex', flexDirection:'row', justifyContent:'center'}}>
+            <div style={{ width: '1px', height: 'auto', backgroundColor: 'white' , margin: '0 8px 0 0' }}></div>
+
+<p style={{fontSize:'12px', }}>
+I'm a passionate full-stack developer, committed to creating 
+innovative web solutions.
+</p>
+            </div>
+           
+          </Box>
+
+        {/* Middle Side */}
         <Box
           sx={{
             display: 'flex',
-            alignItems: 'center',
+            alignItems:'flex-start',
+            flexDirection:'column',
+            margin:'10px'
           }}
         >
-          <Box
-            sx={{
-              width: '50px',
-              height: '50px',
-              borderRadius: '50%',
-              overflow: 'hidden',
-              marginRight:'13px', 
-              marginBottom: isMobile ? '10px' : '0', // Adjust margin for mobile
-            }}
-          >
-            <img
-              src={profileImg}
-              style={{
-                width: '100%',
-                height: '100%',
-                borderRadius: '50%',
-                border: '2px solid white',
-                filter: 'brightness(1.15)',
-                cursor: 'pointer',
-              }}
-            />
+           <h5 style={{margin:'0 0 8px 0',  fontSize:'15px'}}>
+
+            Quick Links
+          </h5>
+     <p className='link' style={{fontSize: '15px', padding:'3px 0px' }}> <a href='' style={{textDecoration:'none', color:'white'}} target='_blank'><ArrowForwardIosIcon style={{fontSize:'12px'}} /><span className='link-text'> Login</span></a></p> 
+     <p className='link' style={{fontSize: '15px',padding:'3px 0px'  }}> <a href='' style={{textDecoration:'none', color:'white'}} target='_blank'><ArrowForwardIosIcon style={{fontSize:'12px'}}/><span className='link-text'> Sign up</span></a></p>
+     <p className='link' style={{fontSize: '15px', padding:'3px 0px'  }}><a href='' style={{textDecoration:'none', color:'white'}} target='_blank'><ArrowForwardIosIcon style={{fontSize:'12px'}}/><span className='link-text'> Dashboard</span></a> </p> 
           </Box>
-          <Box style={{ color: 'white' }}>
-            <p style={{ margin: 0, fontSize: '11px', marginBottom: '0px' }}>Crafted By:</p>
-            <p style={{ margin: 0, fontSize: '17px', marginTop: '0px' }}>Narendra Wadhwa</p>
+
+   {/* Middle Side 2 */}
+   <Box
+          sx={{
+            display: 'flex',
+            alignItems:'flex-start',
+            flexDirection:'column',
+            margin:'10px'
+          }}
+        >
+          <h5 style={{margin:'0 0 8px 0',  fontSize:'15px'}}>
+            My Other Projects
+          </h5>
+     <p className='link' style={{fontSize: '15px', padding:'3px 0px' }}> <a href='' style={{textDecoration:'none', color:'white'}} target='_blank'><ArrowForwardIosIcon style={{fontSize:'12px'}} /><span className='link-text'> Portfolio App</span></a></p> 
+     <p className='link' style={{fontSize: '15px',padding:'3px 0px'  }}> <a href='' style={{textDecoration:'none', color:'white'}} target='_blank'><ArrowForwardIosIcon style={{fontSize:'12px'}}/><span className='link-text'> Tribute Page</span></a></p>
+     <p className='link' style={{fontSize: '15px', padding:'3px 0px'  }}><a href='' style={{textDecoration:'none', color:'white'}} target='_blank'><ArrowForwardIosIcon style={{fontSize:'12px'}}/><span className='link-text'> Booking Show</span></a> </p> 
+     <p className='link' style={{fontSize: '15px', padding:'3px 0px'  }}><a href='' style={{textDecoration:'none', color:'white'}} target='_blank'><ArrowForwardIosIcon style={{fontSize:'12px'}}/><span className='link-text'> Eshop Frontend</span></a> </p> 
           </Box>
-        </Box>
+
+
+
 
         {/* Right Side */}
         <Box
           sx={{
             display: 'flex',
+flexDirection:'column',
+margin:'10px'
+
+          }}
+        >
+      
+            <div>
+        <h5 style={{margin:'0 0 8px 0', fontSize:'15px'}}>
+            Social Links
+          </h5>
+        </div>
+        <Box
+          sx={{
+            display: 'flex',
             alignItems: 'center',
           }}
         >
-          {socialMedia.map((socialMedia, index) => (
+                {socialMedia.map((socialMedia, index) => (
             <IconButton
               key={index}
               component="a"
@@ -104,22 +137,23 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               sx={{
-                width: '35px',
-                height: '35px',
+                width: '38px',
+                height: '38px',
                 marginRight:'10px',
-                padding: 0,
+                marginBottom:'10px',
+                borderRadius:'50%',
+                border: '2px solid #fff',
                 transition: 'transform 0.3s ease-in',
                 '&:hover': {
                   transform: 'scale(1.15)',
                 },
+                color:'white'
               }}
             >
-              <img
-                src={socialMedia.logo}
-                style={{ width: '100%', height: '100%', borderRadius: '50%' }}
-              />
+              {socialMedia.icon}
             </IconButton>
           ))}
+        </Box>
         </Box>
       </Box>
       <Box

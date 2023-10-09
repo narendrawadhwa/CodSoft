@@ -40,7 +40,7 @@ const Home = () => {
 
   return (
     <>
-      <Box sx={{ bgcolor: "#fafafa", minHeight: "100vh" }}>
+      <Box sx={{ bgcolor: "#fafafa", minHeight: "100vh", marginBottom:'10px' }}>
         <Navbar />
         <Header />
         <Container>

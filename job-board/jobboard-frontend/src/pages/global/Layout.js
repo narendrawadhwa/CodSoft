@@ -7,7 +7,7 @@ const Layout = (Component) => ({ ...props }) => {
 
     return (
         <>
-            <div style={{ display: 'flex', minHeight: "100vh" }}>
+            <div style={{ display: 'flex', minHeight: "100vh", overflow:'hidden' }}>
                 <SidebarAdm />
                 <Box sx={{ width: "100%" }}>
                     <HeaderTop />

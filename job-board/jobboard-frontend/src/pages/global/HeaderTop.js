@@ -8,8 +8,9 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-//import sidebar hook
 import { useProSidebar } from 'react-pro-sidebar';
+import profileImg from '../../images/profile-img.png';
+
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -58,7 +59,7 @@ const HeaderTop = () => {
     const { collapseSidebar } = useProSidebar();
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static" sx={{ boxShadow: '10px 0 10px rgba(0, 0, 0, 0.2)' }}>
+            <AppBar position="static" sx={{ boxShadow: '10px 0 10px rgba(0, 0, 0, 0.2)' , justifyContent:'center' }}>
                 <Toolbar>
                     <IconButton onClick={() => collapseSidebar()}
                         size="large"
@@ -77,6 +78,7 @@ const HeaderTop = () => {
                     >
                         HR APP
                     </Typography>
+                   
                     <Search>
                         <SearchIconWrapper>
                             <SearchIcon />
@@ -86,6 +88,7 @@ const HeaderTop = () => {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </Search>
+                
                 </Toolbar>
             </AppBar>
         </Box>

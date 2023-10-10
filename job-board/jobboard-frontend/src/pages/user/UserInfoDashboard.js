@@ -4,7 +4,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { useSelector } from 'react-redux';
-import CircularProgress from '@mui/material/CircularProgress'; // Import CircularProgress for the loading indicator
+import CircularProgress from '@mui/material/CircularProgress';
 
 const UserInfoDashboard = () => {
     const { user, loading } = useSelector(state => state.userProfile);
@@ -27,10 +27,10 @@ const UserInfoDashboard = () => {
                       
                             
                                 <Typography variant="h6" component="div" sx={{ color: "#fafafa" }} >
-                                    First name: {user && user.firstName}
+                                    Full name: {user && user.fullName}
                                 </Typography>
                                 <Typography variant="h6" component="div" sx={{ color: "#fafafa" }} >
-                                    Last name: {user && user.lastName}
+                                    Bio: {user && user.bio}
                                 </Typography>
                                 <Typography variant="h6" component="div" sx={{ color: "#fafafa" }} >
                                     E-mail:  {user && user.email}

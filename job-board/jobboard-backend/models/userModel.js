@@ -28,8 +28,8 @@ const jobsHistorySchema = new mongoose.Schema({
     },
     applicationStatus: {
         type: String,
-        enum: ['Pending', 'Accepted', 'Rejected'],
-        default: 'Pending'
+        enum: ['not applied', 'applied','pending', 'Accepted', 'Rejected'],
+        default: 'pending'
     },
     user: {
         type: ObjectId,
@@ -43,17 +43,17 @@ const jobsHistorySchema = new mongoose.Schema({
 
 const userSchema = new mongoose.Schema({
 
-    firstName: {
+    fullName: {
         type: String,
         trim: true,
-        required: [true, 'first name is required'],
-        maxlength: 32,
+        required: [true, 'full name is required'],
+        maxlength: 64,
     },
-    lastName: {
+    bio: {
         type: String,
         trim: true,
-        required: [true, 'last name is required'],
-        maxlength: 32,
+        required: [true, 'bio is required'],
+        minlength: 20,
     },
     email: {
         type: String,

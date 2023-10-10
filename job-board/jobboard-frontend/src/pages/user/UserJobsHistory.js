@@ -1,10 +1,10 @@
 import { Typography } from '@mui/material';
 import { Box, CircularProgress } from '@mui/material'; // Import CircularProgress for the loading indicator
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import JobsHistoryCard from '../../component/JobsHistoryCard';
-import { userProfileAction } from '../../redux/actions/userAction';
 import { useTheme } from '@mui/material';
+
 
 const UserJobsHistory = () => {
     const { user, loading } = useSelector(state => state.userProfile);

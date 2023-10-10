@@ -30,18 +30,19 @@ const SidebarAdm = () => {
     //log out 
     const logOut = () => {
         dispatch(userLogoutAction());
-        window.location.reload(true);
         setTimeout(() => {
             navigate('/');
         }, 300);
+        window.location.reload(true);
+        
 
     }
 
 
     return (
         <>
-            <Sidebar style={{ borderRightStyle: "none", backgroundColor:'#fff', boxShadow: '0 0 5px rgba(0, 0, 0, 0.2)'  }}>
-                <Box sx={{ display: "flex", justifyContent: "space-between", flexDirection: "column", height: "95%"}}>
+<Sidebar style={{ borderRightStyle: 'none', backgroundColor: '#fff', boxShadow: '0 0 5px rgba(0, 0, 0, 0.2)',  }}>
+                <Box sx={{ display: "flex", justifyContent: "space-between", flexDirection: "column",height: '100vh'}}>
                     <Box>
                         <Box sx={{ pt: 3, pb: 5, display: "flex", justifyContent: "center" }}>
 

@@ -6,6 +6,13 @@ const ErrorResponse = require('../utils/errorResponse');
 //create job
 exports.createJob = async (req, res, next) => {
     try {
+        let company = ''; 
+
+        // Check if the user has a role of 1 (company)
+        if (req.user.role === 1) {
+            company = req.user.fullName; 
+        }
+
         const job = await Job.create({
             title: req.body.title,
             description: req.body.description,
@@ -14,8 +21,11 @@ exports.createJob = async (req, res, next) => {
             jobType: req.body.jobType,
             user: req.user.id,
             createdAtDate: req.body.createdAtDate,
-            experience: req.body.experience
+            experience: req.body.experience,
+            skills: req.body.skills.split(',').map(skill => skill.trim()), 
+            company: company, 
         });
+
         res.status(201).json({
             success: true,
             job
@@ -26,24 +36,31 @@ exports.createJob = async (req, res, next) => {
 }
 
 
+
 //single job
 exports.singleJob = async (req, res, next) => {
     try {
-        const job = await Job.findById(req.params.id);
+        const job = await Job.findById(req.params.id)
+            .populate({
+                path: 'user',
+                model: 'User',
+                select: 'fullName' // Include only the 'fullName' field from the user document
+            });
+
         res.status(200).json({
             success: true,
             job
-        })
+        });
     } catch (error) {
         next(error);
     }
-}
+};
 
 
 //update job by id.
 exports.updateJob = async (req, res, next) => {
     try {
-        const job = await Job.findByIdAndUpdate(req.params.job_id, req.body, { new: true }).populate('jobType', 'jobTypeName').populate('user', 'firstName lastName');
+        const job = await Job.findByIdAndUpdate(req.params.job_id, req.body, { new: true }).populate('jobType', 'jobTypeName').populate('user', 'fullName');
         res.status(200).json({
             success: true,
             job

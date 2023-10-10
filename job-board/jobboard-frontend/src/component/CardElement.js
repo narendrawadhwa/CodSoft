@@ -5,10 +5,11 @@ import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Link } from 'react-router-dom';
-import AccessTimeIcon from '@mui/icons-material/AccessTime'; // Import the clock icon
 import DescriptionIcon from '@mui/icons-material/Description';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
+import HistoryOutlinedIcon from '@mui/icons-material/HistoryOutlined';
+
 
 const CardElement = ({ jobTitle, description, salary, location, experience, createdAtDate, id }) => {
   const { palette } = useTheme();
@@ -58,7 +59,7 @@ const CardElement = ({ jobTitle, description, salary, location, experience, crea
 
           {/* posted days ago */}
           <Typography variant="body2" component="div" style={{ padding: '10px 0px 5px 0px', display: 'flex', fontSize: '13px', alignItems: 'center' }} sx={{ color: palette.secondary.darkBlue, }}>
-            <AccessTimeIcon style={{ marginRight: '8px' }} sx={{ fontSize: 16, color: palette.secondary.darkBlue }} />
+            <HistoryOutlinedIcon style={{ marginRight: '8px' }} sx={{ fontSize: 16, color: palette.secondary.darkBlue }} />
             {postedDaysAgo} {postedDaysAgo > 1 ? 'days ago' : 'day ago'}
           </Typography>
         </CardContent>

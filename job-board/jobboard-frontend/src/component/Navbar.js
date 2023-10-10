@@ -146,6 +146,14 @@ const Navbar = () => {
                                 Home
                             </Link>
                         </Button>
+                        <Button
+                            onClick={handleCloseNavMenu}
+                            sx={{ my: 2, color: 'white', display: 'block' }}>
+                            <Link to="/register" style={{ color: 'white', textDecoration: "none" }}>
+                                Register
+                            </Link>
+                        </Button>
+
 
                     </Box>
 
@@ -204,10 +212,6 @@ const Navbar = () => {
                 <Typography style={{ textDecoration: "none", color: palette.primary.main }} textAlign="center">Log Out</Typography>
               </MenuItem>
             )}
-
-      
-
-
                         </Menu>
                     </Box>
                 </Toolbar>

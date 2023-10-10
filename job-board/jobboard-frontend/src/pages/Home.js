@@ -58,29 +58,34 @@ const Home = () => {
                 <SelectComponent handleChangeCategory={handleChangeCategory} cat={cat} />
 
               </Card>
-              {/* jobs by location */}
-              <Card sx={{ minWidth: 150, mb: 3, mt: 3, p: 2 }}>
-                <Box sx={{ pb: 2 }}>
-                  {/* <h4>Filter by category</h4> */}
-                  <Typography component="h4" sx={{ color: palette.secondary.main, fontWeight: 600 }}>
-                    Filter job by location
-                  </Typography>
-                  <MenuList>
-                    {
-                      setUniqueLocation && setUniqueLocation.map((location, i) => (
-                        <MenuItem key={i}>
-                          <ListItemIcon>
-                            <LocationOnIcon sx={{ color: palette.secondary.main, fontSize: 18 }} />
-                          </ListItemIcon>
-                          <Link style={{ textDecoration: 'none' }} to={`/search/location/${location}`}>{location}</Link>
-                        </MenuItem>
-                      ))
-                    }
+     {/* jobs by location */}
+<Card sx={{ minWidth: 150, mb: 3, mt: 3, p: 2 }}>
+  <Box sx={{ pb: 2 }}>
+    <Typography component="h4" sx={{ color: palette.secondary.main, fontWeight: 600 }}>
+      Filter job by location
+    </Typography>
+    <MenuList>
+      {/* Add an "All" option */}
+      <MenuItem>
+        <ListItemIcon>
+          <LocationOnIcon sx={{ color: palette.secondary.main, fontSize: 18 }} />
+        </ListItemIcon>
+        <Link style={{ textDecoration: 'none' }} to={`/`}>All</Link>
+      </MenuItem>
+      {/* Map through unique locations */}
+      {setUniqueLocation &&
+        setUniqueLocation.map((location, i) => (
+          <MenuItem key={i}>
+            <ListItemIcon>
+              <LocationOnIcon sx={{ color: palette.secondary.main, fontSize: 18 }} />
+            </ListItemIcon>
+            <Link style={{ textDecoration: 'none' }} to={`/search/location/${location}`}>{location}</Link>
+          </MenuItem>
+        ))}
+    </MenuList>
+  </Box>
+</Card>
 
-                  </MenuList>
-
-                </Box>
-              </Card>
             </Box>
             <Box sx={{ flex: 5, p: 2 }}>
               {pathname.includes('/search/location/') && (

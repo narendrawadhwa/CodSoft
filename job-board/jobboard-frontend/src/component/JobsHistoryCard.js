@@ -61,7 +61,7 @@ const JobsHistoryCard = ({ jobTitle, description, applicationStatus, salary, loc
         </Typography>
         
       </CardContent>
-      <Link style={{ textDecoration: 'none', display:'flex', justifyContent:'end' }} to={`/job/${id}`}>
+      <Link style={{ textDecoration: "none", }} to={`/job/${id}`}>
         <div style={{ alignSelf: 'flex-end' }}> 
           <IconButton
             size="small"

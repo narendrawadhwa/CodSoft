@@ -1,5 +1,5 @@
 const slides = document.querySelectorAll(".slide");
-let counter = -1; // Start with -1 to indicate no image is selected initially
+let counter = -1;
 
 slides.forEach((slide, index) => {
     slide.style.left = `${index * 100}%`;
